@@ -1,6 +1,12 @@
 ﻿int number = 0;
 
 Console.Write("Введите число: ");
-number = int.Parse(Console.ReadLine());
+bool userEnter = int.TryParse(Console.ReadLine(), out number);
 
-Console.Write($"Квадрат вашего числа равен {number*number}");
+if(userEnter)
+{
+    Console.Write($"Квадрат числа {number} равен {number*number}");
+}
+else{
+    Console.Write("Ошибка ввода!");
+}
